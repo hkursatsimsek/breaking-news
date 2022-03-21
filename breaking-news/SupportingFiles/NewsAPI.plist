@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-<!--
-   NewsAPI.plist
-   breaking-news
-
-   Created by Kürşat Şimşek on 21.03.2022.
-   Copyright (c) 2022 ___ORGANIZATIONNAME___. All rights reserved.
--->
 <plist version="1.0">
-<dict/>
+<dict>
+	<key>BASE_URL</key>
+	<string>https://newsapi.org/v2</string>
+	<key>API_KEY</key>
+	<string>66d5f974e7244b719cc0f6e17db98bb8</string>
+</dict>
 </plist>

@@ -7,7 +7,7 @@
 
 import Foundation
 
-// MARK: - News
+// MARK: - ArticleResponse
 struct ArticleResponse: Codable {
     let status: String
     let totalResults: Int

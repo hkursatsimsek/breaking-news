@@ -6,5 +6,6 @@ target 'breaking-news' do
   use_frameworks!
 
 pod 'Moya', '~> 15.0'
+pod 'SwiftyJSON', '~> 4.0'
 
 end

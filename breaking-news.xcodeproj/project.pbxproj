@@ -14,9 +14,13 @@
 		7C15E73427E668A50018AEF3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7C15E73227E668A50018AEF3 /* Main.storyboard */; };
 		7C15E73627E668A60018AEF3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7C15E73527E668A60018AEF3 /* Assets.xcassets */; };
 		7C15E73927E668A60018AEF3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7C15E73727E668A60018AEF3 /* LaunchScreen.storyboard */; };
-		7CD2944A27E66FCA00A93FEC /* News.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CD2944927E66FCA00A93FEC /* News.swift */; };
+		7CD2944A27E66FCA00A93FEC /* ArticleResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CD2944927E66FCA00A93FEC /* ArticleResponse.swift */; };
 		7CD2944C27E66FD900A93FEC /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CD2944B27E66FD900A93FEC /* Article.swift */; };
 		7CD2944E27E66FE600A93FEC /* Source.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CD2944D27E66FE600A93FEC /* Source.swift */; };
+		7CD2945127E6746000A93FEC /* NewsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CD2945027E6746000A93FEC /* NewsAPI.swift */; };
+		7CD2945327E6747700A93FEC /* NewsNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CD2945227E6747700A93FEC /* NewsNetworkManager.swift */; };
+		7CD2945527E847A900A93FEC /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CD2945427E847A900A93FEC /* Constants.swift */; };
+		7CD2945927E894AA00A93FEC /* NewsAPI.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7CD2945827E894AA00A93FEC /* NewsAPI.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,9 +33,13 @@
 		7C15E73527E668A60018AEF3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7C15E73827E668A60018AEF3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7C15E73A27E668A60018AEF3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7CD2944927E66FCA00A93FEC /* News.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = News.swift; sourceTree = "<group>"; };
+		7CD2944927E66FCA00A93FEC /* ArticleResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleResponse.swift; sourceTree = "<group>"; };
 		7CD2944B27E66FD900A93FEC /* Article.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
 		7CD2944D27E66FE600A93FEC /* Source.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Source.swift; sourceTree = "<group>"; };
+		7CD2945027E6746000A93FEC /* NewsAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsAPI.swift; sourceTree = "<group>"; };
+		7CD2945227E6747700A93FEC /* NewsNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsNetworkManager.swift; sourceTree = "<group>"; };
+		7CD2945427E847A900A93FEC /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		7CD2945827E894AA00A93FEC /* NewsAPI.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = NewsAPI.plist; sourceTree = "<group>"; };
 		85094A4F09FBA58F112D1DBE /* Pods-breaking-news.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-breaking-news.debug.xcconfig"; path = "Target Support Files/Pods-breaking-news/Pods-breaking-news.debug.xcconfig"; sourceTree = "<group>"; };
 		E388F37974F665DB067AEABD /* Pods-breaking-news.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-breaking-news.release.xcconfig"; path = "Target Support Files/Pods-breaking-news/Pods-breaking-news.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -77,17 +85,12 @@
 		7C15E72B27E668A50018AEF3 /* breaking-news */ = {
 			isa = PBXGroup;
 			children = (
-				7CD2944827E66F4400A93FEC /* Services */,
+				7CD2944F27E6729600A93FEC /* Helpers */,
+				7CD2944827E66F4400A93FEC /* Network */,
 				7CD2944727E66F1400A93FEC /* Controllers */,
 				7CD2944627E66F0C00A93FEC /* UI */,
 				7CD2944527E66F0500A93FEC /* Models */,
-				7C15E72C27E668A50018AEF3 /* AppDelegate.swift */,
-				7C15E72E27E668A50018AEF3 /* SceneDelegate.swift */,
-				7C15E73027E668A50018AEF3 /* ViewController.swift */,
-				7C15E73227E668A50018AEF3 /* Main.storyboard */,
-				7C15E73527E668A60018AEF3 /* Assets.xcassets */,
-				7C15E73727E668A60018AEF3 /* LaunchScreen.storyboard */,
-				7C15E73A27E668A60018AEF3 /* Info.plist */,
+				7CD2945B27E8C6C200A93FEC /* SupportingFiles */,
 			);
 			path = "breaking-news";
 			sourceTree = "<group>";
@@ -95,7 +98,7 @@
 		7CD2944527E66F0500A93FEC /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				7CD2944927E66FCA00A93FEC /* News.swift */,
+				7CD2944927E66FCA00A93FEC /* ArticleResponse.swift */,
 				7CD2944B27E66FD900A93FEC /* Article.swift */,
 				7CD2944D27E66FE600A93FEC /* Source.swift */,
 			);
@@ -105,6 +108,8 @@
 		7CD2944627E66F0C00A93FEC /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				7C15E73227E668A50018AEF3 /* Main.storyboard */,
+				7C15E73727E668A60018AEF3 /* LaunchScreen.storyboard */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -112,15 +117,38 @@
 		7CD2944727E66F1400A93FEC /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				7C15E73027E668A50018AEF3 /* ViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
 		};
-		7CD2944827E66F4400A93FEC /* Services */ = {
+		7CD2944827E66F4400A93FEC /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				7CD2945027E6746000A93FEC /* NewsAPI.swift */,
+				7CD2945227E6747700A93FEC /* NewsNetworkManager.swift */,
 			);
-			path = Services;
+			path = Network;
+			sourceTree = "<group>";
+		};
+		7CD2944F27E6729600A93FEC /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				7CD2945427E847A900A93FEC /* Constants.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		7CD2945B27E8C6C200A93FEC /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				7C15E73A27E668A60018AEF3 /* Info.plist */,
+				7CD2945827E894AA00A93FEC /* NewsAPI.plist */,
+				7C15E73527E668A60018AEF3 /* Assets.xcassets */,
+				7C15E72C27E668A50018AEF3 /* AppDelegate.swift */,
+				7C15E72E27E668A50018AEF3 /* SceneDelegate.swift */,
+			);
+			path = SupportingFiles;
 			sourceTree = "<group>";
 		};
 		FE62502AECCBCE5FD41B8AB8 /* Pods */ = {
@@ -193,6 +221,7 @@
 			files = (
 				7C15E73927E668A60018AEF3 /* LaunchScreen.storyboard in Resources */,
 				7C15E73627E668A60018AEF3 /* Assets.xcassets in Resources */,
+				7CD2945927E894AA00A93FEC /* NewsAPI.plist in Resources */,
 				7C15E73427E668A50018AEF3 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -249,9 +278,12 @@
 				7C15E73127E668A50018AEF3 /* ViewController.swift in Sources */,
 				7C15E72D27E668A50018AEF3 /* AppDelegate.swift in Sources */,
 				7CD2944E27E66FE600A93FEC /* Source.swift in Sources */,
-				7CD2944A27E66FCA00A93FEC /* News.swift in Sources */,
+				7CD2944A27E66FCA00A93FEC /* ArticleResponse.swift in Sources */,
 				7C15E72F27E668A50018AEF3 /* SceneDelegate.swift in Sources */,
+				7CD2945327E6747700A93FEC /* NewsNetworkManager.swift in Sources */,
+				7CD2945127E6746000A93FEC /* NewsAPI.swift in Sources */,
 				7CD2944C27E66FD900A93FEC /* Article.swift in Sources */,
+				7CD2945527E847A900A93FEC /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -400,7 +432,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = "breaking-news/Info.plist";
+				INFOPLIST_FILE = "breaking-news/SupportingFiles/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -419,7 +451,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = "breaking-news/Info.plist";
+				INFOPLIST_FILE = "breaking-news/SupportingFiles/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
