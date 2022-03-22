@@ -7,12 +7,6 @@
 
 import Foundation
 
-//enum Constants: String {
-//    case baseURL = "https://newsapi.org/v2"
-//    case apiKey = "66d5f974e7244b719cc0f6e17db98bb8"
-//
-//}
-
 struct Constants {
     static var apiKey: String {
         get {
