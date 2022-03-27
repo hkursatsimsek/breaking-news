@@ -76,37 +76,35 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="K3Y-Cr-4HZ">
-                                        <rect key="frame" x="281" y="10" width="125" height="102"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="102" id="Ttb-kM-oHX"/>
-                                            <constraint firstAttribute="width" constant="125" id="ZJV-mh-pAI"/>
-                                        </constraints>
-                                    </pickerView>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Popularity" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BCx-X1-myf">
+                                        <rect key="frame" x="281" y="37" width="119" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="K3Y-Cr-4HZ" secondAttribute="bottom" constant="8" id="24k-pd-TnO"/>
                                     <constraint firstItem="h2Y-4z-PVk" firstAttribute="leading" secondItem="v5Z-9W-b8Y" secondAttribute="leading" id="3sU-aN-HvR"/>
                                     <constraint firstItem="3II-Aw-OBL" firstAttribute="leading" secondItem="viF-vA-g3z" secondAttribute="trailing" constant="27" id="6IX-nK-6id"/>
+                                    <constraint firstAttribute="bottom" secondItem="BCx-X1-myf" secondAttribute="bottom" constant="49" id="6bm-6O-7iS"/>
                                     <constraint firstAttribute="bottom" secondItem="vwN-vO-PMn" secondAttribute="bottom" constant="25" id="6mJ-Ki-1du"/>
                                     <constraint firstItem="h2Y-4z-PVk" firstAttribute="top" secondItem="v5Z-9W-b8Y" secondAttribute="bottom" constant="8" symbolic="YES" id="CGM-xw-YKC"/>
                                     <constraint firstAttribute="bottom" secondItem="h2Y-4z-PVk" secondAttribute="bottom" constant="22" id="Cju-fs-t3f"/>
                                     <constraint firstItem="viF-vA-g3z" firstAttribute="trailing" secondItem="vwN-vO-PMn" secondAttribute="trailing" id="Drb-sg-aV6"/>
                                     <constraint firstItem="viF-vA-g3z" firstAttribute="leading" secondItem="JBX-CA-LOS" secondAttribute="leading" constant="74" id="ICz-bd-3zx"/>
+                                    <constraint firstItem="BCx-X1-myf" firstAttribute="leading" secondItem="3II-Aw-OBL" secondAttribute="trailing" constant="8" symbolic="YES" id="N9i-01-GAH"/>
                                     <constraint firstItem="h2Y-4z-PVk" firstAttribute="top" secondItem="viF-vA-g3z" secondAttribute="bottom" constant="11" id="Q5E-RW-oB5"/>
                                     <constraint firstItem="v5Z-9W-b8Y" firstAttribute="leading" secondItem="JBX-CA-LOS" secondAttribute="leading" constant="10" id="V0E-rj-rMn"/>
                                     <constraint firstItem="h2Y-4z-PVk" firstAttribute="trailing" secondItem="v5Z-9W-b8Y" secondAttribute="trailing" id="X6J-wF-iBA"/>
+                                    <constraint firstItem="BCx-X1-myf" firstAttribute="top" secondItem="JBX-CA-LOS" secondAttribute="top" constant="37" id="a1o-iA-HnB"/>
                                     <constraint firstItem="h2Y-4z-PVk" firstAttribute="leading" secondItem="JBX-CA-LOS" secondAttribute="leading" constant="10" id="bG6-1e-AWW"/>
                                     <constraint firstAttribute="bottom" secondItem="3II-Aw-OBL" secondAttribute="bottom" constant="46" id="bGP-mB-R7U"/>
                                     <constraint firstAttribute="height" constant="120" id="cRg-El-kwM"/>
                                     <constraint firstItem="3II-Aw-OBL" firstAttribute="top" secondItem="JBX-CA-LOS" secondAttribute="top" constant="34" id="dc5-ny-JLl"/>
                                     <constraint firstItem="v5Z-9W-b8Y" firstAttribute="top" secondItem="JBX-CA-LOS" secondAttribute="top" constant="10" id="de2-rK-Dy0"/>
-                                    <constraint firstAttribute="trailing" secondItem="K3Y-Cr-4HZ" secondAttribute="trailing" constant="8" id="fpP-y3-Nsv"/>
                                     <constraint firstItem="viF-vA-g3z" firstAttribute="leading" secondItem="vwN-vO-PMn" secondAttribute="leading" id="fys-RW-yCv"/>
                                     <constraint firstItem="viF-vA-g3z" firstAttribute="top" secondItem="JBX-CA-LOS" secondAttribute="top" constant="13" id="kNh-tf-mFV"/>
-                                    <constraint firstItem="K3Y-Cr-4HZ" firstAttribute="leading" secondItem="3II-Aw-OBL" secondAttribute="trailing" constant="8" id="mhF-NH-0Ad"/>
-                                    <constraint firstItem="K3Y-Cr-4HZ" firstAttribute="top" secondItem="JBX-CA-LOS" secondAttribute="top" constant="10" id="sw9-r5-LLc"/>
+                                    <constraint firstAttribute="trailing" secondItem="BCx-X1-myf" secondAttribute="trailing" constant="14" id="yeg-6s-H6Y"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -125,6 +123,13 @@
                             <constraint firstItem="JBX-CA-LOS" firstAttribute="top" secondItem="4Wp-cc-YQJ" secondAttribute="bottom" id="xBG-9e-m5d"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="articleFromTextField" destination="viF-vA-g3z" id="CSI-tT-y2e"/>
+                        <outlet property="articleSearchBar" destination="4Wp-cc-YQJ" id="q3h-hX-8bk"/>
+                        <outlet property="articleShortByTextField" destination="BCx-X1-myf" id="dwA-ui-o4e"/>
+                        <outlet property="articleTableView" destination="2TT-k5-tqw" id="1SA-Np-Jmu"/>
+                        <outlet property="articleToTextField" destination="h2Y-4z-PVk" id="QKI-sj-zyu"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
