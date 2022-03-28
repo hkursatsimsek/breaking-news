@@ -26,7 +26,11 @@ class SearchArticleViewController: UIViewController {
         articleSearchBar.delegate = self
 
         // Register TableViewCell
-        self.articleTableView.register(ArticleTableViewCell.self, forCellReuseIdentifier: "articleTableViewCellID")
+        /// TableViewCell labels fatal errors
+//        self.articleTableView.register(ArticleTableViewCell.self, forCellReuseIdentifier: "articleTableViewCellID")
+
+        let nibArticles = UINib(nibName: "ArticleTableViewCell", bundle: nil)
+        articleTableView.register(nibArticles, forCellReuseIdentifier: "articleTableViewCellID")
 
         fetchArticlesGeneric()
 //        fetchArticles()
@@ -79,7 +83,7 @@ extension SearchArticleViewController: UITableViewDelegate, UITableViewDataSourc
     }
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 200
+        return 250
     }
 }
 

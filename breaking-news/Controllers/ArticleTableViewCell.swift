@@ -8,24 +8,20 @@
 import UIKit
 
 class ArticleTableViewCell: UITableViewCell {
-    @IBOutlet weak var articleImageView: UIImageView!
-    @IBOutlet weak var articleTitleLabel: UILabel!
-    @IBOutlet weak var articleAuthorLabel: UILabel!
-    @IBOutlet weak var articlePublishedLabel: UILabel!
-    @IBOutlet weak var articleSourceLabel: UILabel!
-
-    override func awakeFromNib() {
-        super.awakeFromNib()
-    }
+    @IBOutlet weak var artImageView: UIImageView!
+    @IBOutlet weak var artTitleLabel: UILabel!
+    @IBOutlet weak var artAuthorLabel: UILabel!
+    @IBOutlet weak var artPublishedLabel: UILabel!
+    @IBOutlet weak var artSourceLabel: UILabel!
 
     func setArticle(with article : Article) {
-        if let title = article.title, let author = article.author, let published = article.publishedAt, let source = article.source.name {
-            print("\(title) * \(author) * \(published) * \(source)")
-            articleTitleLabel.text = title
-            articleAuthorLabel.text = author
-            articlePublishedLabel.text = published
-            articleSourceLabel.text = source
-//            articleImageView.image = UIImage()
+        if let title = article.title, let author = article.author, let published = article.publishedAt, let source = article.source?.name {
+//            print("\(title) * \(author) * \(published) * \(source)")
+            artTitleLabel.text = "\(title)"
+            artAuthorLabel.text = author
+            artPublishedLabel.text = published
+            artSourceLabel.text = source
+//            artImageView.image = UIImage()
         }
     }
 }

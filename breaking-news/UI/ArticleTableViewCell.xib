@@ -92,11 +92,11 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
-                <outlet property="articleAuthorLabel" destination="Wst-YZ-r1X" id="QNm-YB-3sb"/>
-                <outlet property="articleImageView" destination="uki-Np-HDi" id="OJr-Je-9sb"/>
-                <outlet property="articlePublishedLabel" destination="nTP-gp-rUm" id="Nd7-fw-CCa"/>
-                <outlet property="articleSourceLabel" destination="B6K-Nd-1CI" id="a22-xJ-gxd"/>
-                <outlet property="articleTitleLabel" destination="Baw-58-uqX" id="aks-6g-UNq"/>
+                <outlet property="artAuthorLabel" destination="Wst-YZ-r1X" id="ppK-IA-BZQ"/>
+                <outlet property="artImageView" destination="uki-Np-HDi" id="X3z-Or-qFN"/>
+                <outlet property="artPublishedLabel" destination="nTP-gp-rUm" id="UmK-xu-O2q"/>
+                <outlet property="artSourceLabel" destination="B6K-Nd-1CI" id="7W2-st-gHC"/>
+                <outlet property="artTitleLabel" destination="Baw-58-uqX" id="qrD-ao-Udm"/>
             </connections>
             <point key="canvasLocation" x="147.82608695652175" y="130.24553571428572"/>
         </tableViewCell>
