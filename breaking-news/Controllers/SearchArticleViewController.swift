@@ -17,6 +17,8 @@ class SearchArticleViewController: UIViewController {
     
     let networkManager = NewsNetworkManager()
     var articleList = [Article]()
+    var searchText = ""
+    var filteredText = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,7 +34,7 @@ class SearchArticleViewController: UIViewController {
         let nibArticles = UINib(nibName: "ArticleTableViewCell", bundle: nil)
         articleTableView.register(nibArticles, forCellReuseIdentifier: "articleTableViewCellID")
 
-        fetchArticlesGeneric()
+        fetchArticlesGeneric(searchText: searchText)
 //        fetchArticles()
     }
 
@@ -40,8 +42,8 @@ class SearchArticleViewController: UIViewController {
 
 // MARK: Methods
 extension SearchArticleViewController {
-    func fetchArticlesGeneric() {
-        networkManager.fetchArticlesGeneric(searchText: "Apple") { [weak self] result in
+    func fetchArticlesGeneric(searchText: String) {
+        networkManager.fetchArticlesGeneric(searchText: searchText) { [weak self] result in
             guard let strongSelf = self else { return }
             switch result {
             case .success(let articleResponse):
@@ -89,5 +91,8 @@ extension SearchArticleViewController: UITableViewDelegate, UITableViewDataSourc
 
 // MARK: SearchBar
 extension SearchArticleViewController: UISearchBarDelegate {
-
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        fetchArticlesGeneric(searchText: searchText)
+        articleTableView.reloadData()
+    }
 }
