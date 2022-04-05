@@ -39,6 +39,20 @@ class SearchArticleViewController: UIViewController {
         //        fetchArticles()
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationItem.setHidesBackButton(true, animated: true)
+        navigationController?.setNavigationBarHidden(true, animated: animated)
+    }
+
+    /**
+        If you know that all other views should have the bar visible, you could use viewWillDisappear to set it to visible again.
+     */
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.setNavigationBarHidden(false, animated: animated)
+    }
+
 }
 
 // MARK: Methods
