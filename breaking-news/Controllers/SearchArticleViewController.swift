@@ -7,6 +7,7 @@
 
 import UIKit
 import Moya
+import SafariServices
 
 class SearchArticleViewController: UIViewController {
     @IBOutlet weak var articleSearchBar: UISearchBar!
@@ -29,13 +30,13 @@ class SearchArticleViewController: UIViewController {
 
         // Register TableViewCell
         /// TableViewCell labels fatal errors
-//        self.articleTableView.register(ArticleTableViewCell.self, forCellReuseIdentifier: "articleTableViewCellID")
+        //        self.articleTableView.register(ArticleTableViewCell.self, forCellReuseIdentifier: "articleTableViewCellID")
 
         let nibArticles = UINib(nibName: "ArticleTableViewCell", bundle: nil)
         articleTableView.register(nibArticles, forCellReuseIdentifier: "articleTableViewCellID")
 
         fetchArticlesGeneric(searchText: searchText)
-//        fetchArticles()
+        //        fetchArticles()
     }
 
 }
@@ -49,10 +50,10 @@ extension SearchArticleViewController {
             case .success(let articleResponse):
                 strongSelf.articleList = articleResponse.articles
                 strongSelf.articleTableView.reloadData()
-//                for article in strongSelf.articleList {
-//                    print("\(article.author) - \(article.title) - \(article.source?.name) - \(article.publishedAt)")
-//                    print("-------")
-//                }
+            //                for article in strongSelf.articleList {
+            //                    print("\(article.author) - \(article.title) - \(article.source?.name) - \(article.publishedAt)")
+            //                    print("-------")
+            //                }
             case .failure(let error):
                 print(String(describing: error))
             }
@@ -62,9 +63,9 @@ extension SearchArticleViewController {
     func fetchArticles() {
         networkManager.fetchArticles(searchText: "Google") { articles in
             self.articleList = articles
-//            for article in articles {
-//                print(article.author)
-//            }
+            //            for article in articles {
+            //                print(article.author)
+            //            }
         }
     }
 
@@ -87,6 +88,33 @@ extension SearchArticleViewController: UITableViewDelegate, UITableViewDataSourc
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 180
     }
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        /// Open Another Storyboard
+        //        if let dest = UIStoryboard(name: "ArticleDetailScreen", bundle: nil)
+        //            .instantiateViewController(identifier: "articleDetailStoryboardID") as? ArticleDetailViewController {
+        //            dest.articleDetail = self.articleList[indexPath.row]
+        //            dest.modalPresentationStyle = .overCurrentContext
+        //            dest.modalTransitionStyle = .crossDissolve
+        //            self.navigationController?.pushViewController(dest, animated: false)
+        //        }
+
+        /// Open WebView
+        //        let article = self.articleList[indexPath.row]
+        //        if let articleURL = article.url {
+        //            if UIApplication.shared.canOpenURL(articleURL) {
+        //                UIApplication.shared.open(URL(string: articleURL)!, options: [:], completionHandler: nil)
+        //            }
+        //        }
+
+        /// Open SafariViewController
+        let article = self.articleList[indexPath.row]
+        if let articleURL = article.url {
+            let safariVC = SFSafariViewController(url: URL(string: articleURL)!)
+            present(safariVC, animated: true, completion: nil)
+            safariVC.delegate = self
+        }
+    }
 }
 
 // MARK: SearchBar
@@ -94,5 +122,12 @@ extension SearchArticleViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         fetchArticlesGeneric(searchText: searchText)
         articleTableView.reloadData()
+    }
+}
+
+// MARK: SafariViewController
+extension SearchArticleViewController: SFSafariViewControllerDelegate {
+    func safariViewControllerDidFinish(_ controller: SFSafariViewController) {
+        controller.dismiss(animated: true, completion: nil)
     }
 }
